@@ -1,0 +1,23 @@
+apply plugin: "org.springframework.boot"
+apply plugin: "io.spring.dependency-management"
+apply plugin: "java"
+apply plugin: "application"
+
+bootJar {
+  // To avoid conflicting artifacts
+  // https://github.com/spring-projects/spring-boot/issues/10778
+  rootSpec.filesMatching('**/*.jar', { jar ->
+    String groupId = jar.file.parentFile.parentFile.parentFile.parentFile.name
+    jar.name = "$groupId-${jar.name}"
+  })
+  rootSpec.duplicatesStrategy = DuplicatesStrategy.FAIL
+}
+
+jar {
+  enabled = true
+}
+
+dependencies {
+  implementation 'org.springframework.boot:spring-boot-starter'
+  implementation 'org.springframework.boot:spring-boot-starter-web'
+}

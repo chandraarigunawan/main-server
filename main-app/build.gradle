@@ -1,0 +1,14 @@
+apply from: "${rootDir}/gradle/application.gradle"
+
+mainClassName = "com.main.app.MainServiceApplication"
+applicationName = "main-service"
+
+dependencies {
+    annotationProcessor "org.projectlombok:lombok:${lombokVersion}"
+    compileOnly "org.projectlombok:lombok:${lombokVersion}"
+    
+    implementation project(":main-model")
+    implementation project(":main-web")
+
+    implementation "org.springdoc:springdoc-openapi-ui:1.6.2"
+}

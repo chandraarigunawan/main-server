@@ -1,0 +1,6 @@
+apply from: "${rootDir}/gradle/publishing.gradle"
+
+dependencies {
+    annotationProcessor "org.projectlombok:lombok:${lombokVersion}"
+    compileOnly "org.projectlombok:lombok:${lombokVersion}"
+}

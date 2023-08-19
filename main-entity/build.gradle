@@ -1,0 +1,6 @@
+apply from: "${rootDir}/gradle/spring-boot.gradle"
+
+dependencies {
+    annotationProcessor "org.projectlombok:lombok:${lombokVersion}"
+    compileOnly "org.projectlombok:lombok:${lombokVersion}"
+}
