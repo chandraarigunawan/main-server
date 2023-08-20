@@ -1,0 +1,19 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      java: corretto8
+  pre_build:
+    commands:
+      - ./gradlew test
+  build:
+    commands:
+      - ./gradlew bootJar
+artifacts:
+  files:
+    - 'main-app/build/libs/*.jar'
+    - 'scripts/server_start.sh'
+    - 'scripts/server_stop.sh'
+    - 'scripts/server_validate.sh'
+    - 'appspec.yml'
+  name: deployment
