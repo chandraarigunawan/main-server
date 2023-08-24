@@ -9,6 +9,6 @@ public class HelloController {
 
   @RequestMapping(value = "/hello", method = RequestMethod.GET)
   public String hello() {
-    return "hello world API";
+    return "hello world API versi 2";
   }
 }
