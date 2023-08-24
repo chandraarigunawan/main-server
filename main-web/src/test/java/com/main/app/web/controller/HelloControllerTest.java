@@ -11,6 +11,6 @@ public class HelloControllerTest {
   @Test
   public void testHello() {
     String hello = target.hello();
-    assertThat(hello).isEqualTo("hello world");
+    assertThat(hello).isEqualTo("hello world API");
   }
 }
